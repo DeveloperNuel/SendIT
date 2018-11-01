@@ -7,6 +7,7 @@ body{
 	margin: 0;
 	background-color: #f4f4f4;
 }
+/*Global css*/
 
 .container{
 	width: 80%;
@@ -18,6 +19,25 @@ ul{
 	padding: 0;
 }
 
+.dark{
+  padding:15px;
+  background:#35424a;
+  color:#ffffff;
+  margin-top:10px;
+  margin-bottom:10px;
+
+}
+.buttons{
+  height:38px;
+  background:#804000;
+  border:0;
+  border-radius: 2px;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+
+}
+/*Header*/
 
 header{
 	background: #663300;
@@ -141,5 +161,45 @@ footer{
 	padding: 20px;
 	margin-top: 20px;
 	color: #ffffff;
+	text-align: center;
 	background-color: #663300;
+	position: fixed;
+	width: 100%;
+    
+}
+
+aside#sidebar{
+  float:left;
+  width:30%;
+  margin-top:10px;
+
+}
+/*Login Form Styling*/
+#login-style{
+	background-color: #f3e5d8;
+	padding-top: 60px;
+	padding-left: 20px;
+	padding-bottom: 40px;
+
+}
+#login-style label{
+ display: block;
+ padding-bottom: 20px;
+}
+#login-style input{
+   padding-left: 10px;
+   border-radius: 2px;
+   width: 40%;
+   font-size: 20px;
+   border: 1px;
+   height: 40px;
+}
+
+#login-style button{
+   padding-left: 10px;
+   border-radius: 2px;
+   width: 30%;
+   font-size: 20px;
+   border: 1px;
+   height: 40px;
 }
