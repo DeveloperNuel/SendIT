@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<header>
+		<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="Emmanuel TUYISHIMIRE">
+	<title>SendIT | Welcome</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="web-brand">
+				<h1>SendIT <i class='fas fa-location-arrow' style='font-size:36px;color: grey'></i></h1>
+			
+			</div>
+			<nav>
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="login.html">Sign In</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			  <div id="sidebar">
+			  	<div class="dark">
+				  <h2>My Dash board</h2>
+                   <a href="vieworder.html">View All Orders</a><br>
+                   <a href="ship-parcel.html">Ship Parcel</a><br>
+                   <a href="invoice.html">Invoice</a><br>
+                   <a href="change-destination.html">Change Parcel Destination</a>
+                 </div>
+			  </div>
+			 
+		</div>
+	
+	</section>
+  <section>
+ <div class="container" >
+     	<div id="Order">
+            <table>
+                    <caption>My Parcel Orders Summary</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Order Id</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Pick Up Location</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Tracking Number</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-id="01">
+                        <td data-label="Order Id">Espy-001</td>
+                        <td data-label="Order Date">04/01/2016</td>
+                        <td data-label="Price">$1,190</td>
+                        <td data-label="Pick Up Location"> Gisozi </td>
+                        <td data-label="Destination"> Gisenyi </td>
+                        <td data-label="Tracking Number"> RBOOOOVFR</td>
+                        <td data-label="Status"> Pending</td>
+                        <td data-label="Action"><span class="edit-order"><i class="material-icons">edit</i></span> <span class="delete-order"><i class="material-icons">cancel</i></span> </td>
+                      </tr>
+                      <tr data-id="02">
+                            <td scope="row" data-label="Order Id">Espy-001</td>
+                            <td data-label="Order Date">04/01/2016</td>
+                            <td data-label="Price">$1,190</td>
+                            <td data-label="Pick Up Location"> Gisozi </td>
+                            <td data-label="Destination"> Gisenyi</td>
+                            <td data-label="Tracking Number"> RBOOOOVFR</td>
+                            <td data-label="Status"> Pending</td>
+                            <td data-label="Action"><span class="edit-order"><i class="material-icons">edit</i></span> <span class="delete-order"><i class="material-icons">cancel</i></span> </td>
+                      </tr>
+                      <tr data-id="03">
+                            <td scope="row" data-label="Order Id">Espy-001</td>
+                            <td data-label="Order Date">04/01/2016</td>
+                            <td data-label="Price">$1,190</td>
+                            <td data-label="Pick Up Location"> Gisozi </td>
+                            <td data-label="Destination"> Gisenyi</td>
+                            <td data-label="Tracking Number"> RBOOOOVFR</td>
+                            <td data-label="Status">delivered</td>
+                            <td data-label="Action"><span class="edit-order"><i class="material-icons">edit</i></span> <span class="delete-order"><i class="material-icons">cancel</i></span> </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                  </table>
+               </div>
+           </div>
+      </section>
+ </body>
+</html>
