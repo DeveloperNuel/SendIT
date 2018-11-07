@@ -25,6 +25,8 @@ ul{
   color:#ffffff;
   margin-top:10px;
   margin-bottom:10px;
+  height: 500px;
+
 
 }
 .buttons{
@@ -252,4 +254,10 @@ footer{
 #Order{
 	padding-top: 10px;
 	float: right;
+}
+#Order h1{
+	text-align: center;
+}
+.edit-order{
+
 }
