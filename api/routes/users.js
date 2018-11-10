@@ -4,7 +4,6 @@ import Parcels from '../db/parcels';
 
 const router = express.Router();
 
-
 router.post('/register', (req, res) => {
   const errors = [];
 
