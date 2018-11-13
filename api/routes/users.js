@@ -7,12 +7,6 @@ const router = express.Router();
 router.post('/register', (req, res) => {
   const errors = [];
 
-  if (req.body.password !== req.body.passwordConfirm) {
-    errors.push({
-      text: 'Password do not match'
-    });
-  }
-
   if (req.body.password.length < 6) {
     errors.push({
       text: 'Passwor must be at least 6 characters'
