@@ -1,0 +1,23 @@
+{
+  "name": "sendit",
+  "version": "1.0.0",
+  "description": "SendIT is a courier service that helps users deliver parcels to different destinations, and it  provides courier quotes based on weight categories. It uses the popular JavaScript runtime environment, NodeJs and runs express at the backend. All codes are written in ES6 syntax and transpiled using the BabelCLI to a preset ES2015.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeveloperNuel/SendIT.git"
+  },
+  "author": "\"Emmanuel TUYISHIMIRE\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeveloperNuel/SendIT/issues"
+  },
+  "homepage": "https://github.com/DeveloperNuel/SendIT#readme",
+  "devDependencies": {
+    "babel-install": "2.1.0",
+    "eslint": "^5.9.0"
+  }
+}
