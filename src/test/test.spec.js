@@ -89,7 +89,7 @@ describe('SendIT API TESTS', () => {
         }));
     });
 
-    // Get a Specif Parcel
+    // Get a Specific Parcel
     describe('GET/ Specif Parcel', () => {
       // Parcel Should be canceled
       it('should return a parcel', () => chai.request(app)

@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">19.05% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/42</span>
+        <span class='fraction'>21/42</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">27.78% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/18</span>
+        <span class='fraction'>5/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>4/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/40</span>
+        <span class='fraction'>20/40</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -160,9 +160,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,31 +225,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -264,10 +264,10 @@ import Parcels from '../data/parcels';
 &nbsp;
 const router = express.Router();
 &nbsp;
-router.post('/register', <span class="fstat-no" title="function not covered" >(</span>req, res) =&gt; {
-  const errors = <span class="cstat-no" title="statement not covered" >[];</span>
+router.post('/register', (req, res) =&gt; {
+  const errors = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (req.body.password.length &lt; 8) {</span>
+  if (req.body.password.length &lt; 8) {
 <span class="cstat-no" title="statement not covered" >    errors.push({</span>
       text: 'Passwor must be at least 8 characters',
     });
@@ -329,20 +329,20 @@ router.post('/register', <span class="fstat-no" title="function not covered" >(<
 });
 &nbsp;
 // Get user parcel delivery orders
-router.get('/:userId/parcels', <span class="fstat-no" title="function not covered" >(</span>req, res) =&gt; {
-  const userParcels = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  req.params.userId = Number(req.params.userId);</span>
+router.get('/:userId/parcels', (req, res) =&gt; {
+  const userParcels = [];
+  req.params.userId = Number(req.params.userId);
 &nbsp;
-  const user = <span class="cstat-no" title="statement not covered" >User.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >eachUser =&gt; eachUser.userId === req.params.userId);</span></span></span>
-<span class="cstat-no" title="statement not covered" >  if (user.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    Parcels.forEach(<span class="fstat-no" title="function not covered" >(</span>parcel) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      if (parcel.userId === req.params.userId) {</span>
-<span class="cstat-no" title="statement not covered" >        userParcels.push(parcel.parcel);</span>
+  const user = User.filter(eachUser =&gt; eachUser.userId === req.params.userId);
+  if (user.length &gt; 0) {
+    Parcels.forEach((parcel) =&gt; {
+      if (parcel.userId === req.params.userId) {
+        userParcels.push(parcel.parcel);
       }
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (userParcels.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(200).json({</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (userParcels.length &gt; 0) {
+      return res.status(200).json({
         success: true,
         message: 'User parcels retrieved successfully',
         userId: req.params.userId,
@@ -354,7 +354,7 @@ router.get('/:userId/parcels', <span class="fstat-no" title="function not covere
       message: 'User has no parcels',
     });
   }
-<span class="cstat-no" title="statement not covered" >  return res.status(404).json({</span>
+  return res.status(404).json({
     success: false,
     message: 'User not Exist',
   });
@@ -367,7 +367,7 @@ module.exports = router;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Nov 17 2018 13:41:58 GMT+0200 (CAT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Nov 17 2018 14:11:46 GMT+0200 (CAT)
 </div>
 </div>
 <script src="../../prettify.js"></script>
