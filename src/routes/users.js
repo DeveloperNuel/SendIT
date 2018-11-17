@@ -1,4 +1,6 @@
 import express from 'express';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import bcrypt from 'bcryptjs';
 import User from '../data/users';
 import Parcels from '../data/parcels';
 

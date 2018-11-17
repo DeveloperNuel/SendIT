@@ -106,7 +106,7 @@ router.put('/:parcelId/cancel', (req, res) => {
 
   if (parcelDelivery) {
     if (
-      parcelDelivery.status === 'peding' || parcelDelivery.status === 'canceled'
+      parcelDelivery.status === 'pending' || parcelDelivery.status === 'canceled'
     ) {
       parcelDelivery.status = 'canceled';
       if (Parcels[index].parcel.parcelId === parcelDelivery.parcelId) {
