@@ -204,6 +204,7 @@ footer{
 	padding-top: 50px;
 	padding-left: 20px;
 	padding-bottom: 40px;
+	text-align: center;
 
 }
 #login-style label{
@@ -222,7 +223,7 @@ footer{
 #login-style button{
    padding-left: 10px;
    border-radius: 2px;
-   width: 30%;
+   width: 20%;
    font-size: 20px;
    border: 1px;
    height: 40px;
@@ -238,6 +239,7 @@ footer{
 #signup-style label{
  display: block;
  padding-bottom: 20px;
+ text-align: center;
 }
 #signup-style input{
    padding-left: 10px;
@@ -251,10 +253,16 @@ footer{
 #signup-style button{
    padding-left: 10px;
    border-radius: 2px;
-   width: 30%;
+   width: 20%;
    font-size: 20px;
    border: 1px;
    height: 40px;
+   
+}
+#signup-style a{
+	padding-left: 480px;
+	float: left;
+	
 }
 #Order{
 	padding-top: 10px;
