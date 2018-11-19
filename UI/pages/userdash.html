@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="Emmanuel TUYISHIMIRE">
+	<title>User Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="web-brand">
+				<h1>SendIT <i class='fas fa-location-arrow' style='font-size:36px;color: grey'></i></h1>
+			
+			</div>
+			<nav>
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="login.html">Sign In</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			  <div id="sidebar">
+			  	<div class="dark">
+				  <h2>My Dash board</h2>
+                   <a href="vieworder.html">View All Orders</a><br>
+                   <a href="ship-parcel.html">Ship Parcel</a><br>
+                   <a href="invoice.html">Invoice</a><br>
+                   <a href="signout.html">Log Out</a>
+                 </div>
+              </div>
+            <div class="col-9">
+                    <div class="row mt-5">
+                      <div class="col-4">
+                        <div class="box profile-counter">
+                          <p>Total Order: <strong>20</strong></p>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="box profile-counter">
+                          <p><i class="fa fa-tick"></i> Deliverd: <strong>13</strong></p>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="box profile-counter">
+                          <p><i class="fa fa-truck"></i> In Process: <strong>7</strong></p>
+                        </div>
+                      </div>
+            </div>
+     	<div id="Order">
+            <table>
+
+                    <h1>My Parcel Orders Summary</h1>
+                      <tr>
+                        <th scope="col">Order Id</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Pick Up Location</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Tracking Number</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    
+                      <tr>
+                        <td data-label="Order Id">Ord-001</td>
+                        <td data-label="Order Date">02/11/2018</td>
+                        <td data-label="Price">Rwf 20,500</td>
+                        <td data-label="Pick Up Location"> Kigali </td>
+                        <td data-label="Destination"> Rusizi </td>
+                        <td data-label="Tracking Number"> GE00QR2</td>
+                        <td data-label="Status"> Pending</td>
+                        <td data-label="Action"><span class="edit-order"><a href="edit-order.html"><img src="../image/edit.png"></span></a> <span class="delete-order"><a href="delete-order.html"><img src="../image/cancel.png"></span> 
+                      </tr>
+                      <tr>
+                            <td scope="row" data-label="Order Id">Ord-002</td>
+                            <td data-label="Order Date">02/11/2018</td>
+                            <td data-label="Price">Rwf 20,500</td>
+                            <td data-label="Pick Up Location"> Kigali </td>
+                            <td data-label="Destination"> Rusizi</td>
+                            <td data-label="Tracking Number"> GE00QR2</td>
+                            <td data-label="Status"> delivered</td>
+                            <td data-label="Action"><span class="edit-order"><a href="edit-order.html"><img src="../image/edit.png"></span></a> <span class="delete-order"><a href="delete-order.html"><img src="../image/cancel.png"></span> 
+                      </tr>
+                      <tr >
+                            <td scope="row" data-label="Order Id">Ord-003</td>
+                            <td data-label="Order Date">02/11/2018</td>
+                            <td data-label="Price">Rwf 20,500</td>
+                            <td data-label="Pick Up Location"> Kigali </td>
+                            <td data-label="Destination"> Rusizi</td>
+                            <td data-label="Tracking Number"> GE00QR2</td>
+                            <td data-label="Status">delivered</td>
+                            <td data-label="Action"><span class="edit-order"><a href="edit-order.html"><img src="../image/edit.png"></span></a> <span class="delete-order"><a href="delete-order.html"><img src="../image/cancel.png"></span> 
+                      </tr>
+                      <tr >
+                            <td scope="row" data-label="Order Id">Ord-004</td>
+                            <td data-label="Order Date">02/11/2018</td>
+                            <td data-label="Price">Rwf 20,500</td>
+                            <td data-label="Pick Up Location"> Kigali </td>
+                            <td data-label="Destination"> Rusizi</td>
+                            <td data-label="Tracking Number"> GE00QR2</td>
+                            <td data-label="Status">peding</td>
+                            <td data-label="Action"><span class="edit-order"><a href="edit-order.html"><img src="../image/edit.png"></span></a> <span class="delete-order"><a href="delete-order.html"><img src="../image/cancel.png"></span> 
+                      </tr>
+                        <tr >
+                            <td scope="row" data-label="Order Id">Ord-005</td>
+                            <td data-label="Order Date">02/11/2018</td>
+                            <td data-label="Price">Rwf 20,500</td>
+                            <td data-label="Pick Up Location"> Kigali </td>
+                            <td data-label="Destination"> Rusizi</td>
+                            <td data-label="Tracking Number"> GE00QR2</td>
+                            <td data-label="Status">delivered</td>
+                            <td data-label="Action"><span class="edit-order"><a href="edit-order.html"><img src="../image/edit.png"></span></a> <span class="delete-order"><a href="delete-order.html"><img src="../image/cancel.png"></span> 
+                      </tr>
+                      <tr >
+                            <td scope="row" data-label="Order Id">Ord-006</td>
+                            <td data-label="Order Date">02/11/2018</td>
+                            <td data-label="Price">Rwf 20,500</td>
+                            <td data-label="Pick Up Location"> Kigali </td>
+                            <td data-label="Destination"> Rusizi</td>
+                            <td data-label="Tracking Number"> GE00QR2</td>
+                            <td data-label="Status">pending</td>
+                            <td data-label="Action"><span class="edit-order"><a href="edit-order.html"><img src="../image/edit.png"></span></a> <span class="delete-order"><a href="delete-order.html"><img src="../image/cancel.png"></span> 
+                      </tr>
+                  </table>
+               </div>
+           </div>
+      </section>
+	
+	</section>
+	
+</body>
+</html>
