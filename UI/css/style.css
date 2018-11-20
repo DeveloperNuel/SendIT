@@ -10,7 +10,7 @@ body{
 /*Global css*/
 
 .container{
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	overflow: hidden;
 }
@@ -25,7 +25,8 @@ ul{
   color:#ffffff;
   margin-top:10px;
   margin-bottom:10px;
-  height: 500px;
+  height: 600px;
+  width: 70%;
 
 
 }
@@ -286,4 +287,43 @@ footer{
 	float: left;
 	padding-bottom: 40px;
 	display: inline;
+
+	width: 150px;
+    padding: 10px;
+    border: 5px solid gray;
+	margin: 0;
+	margin-right: 10px;
   }
+
+.tftable {font-size:12px;
+	color:#333333;display:inline-block;
+	width:900px;border-width: 1px;border-color: #729ea5;
+	border-collapse: collapse; margin-right:20px;float: left;}
+
+.tftable th {
+	font-size:16px;
+	background-color:#acc8cc;
+	border-width: 1px;border-style: solid;
+	border-color: #729ea5;
+	text-align:left;width:200px;
+}
+
+.tftable tr {
+	background-color:#d4e3e5;width:100px;
+}
+.tftable td {
+	font-size:12px;border-width: 1px;
+	border-style: solid;
+	border-color: #729ea5;width:200px;
+}
+
+.tftable tr:hover {
+	background-color:#ffffff;
+}
+
+
+/* Shipping*/
+#ship{
+	background: #ffffff;
+	border-bottom: 2px solid #e8491d;
+}
