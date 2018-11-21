@@ -6,41 +6,29 @@ const router = express.Router();
 
 // Create parcel
 router.post('/', (req, res) => {
+  console.log(req.body);
   const { userId, parcel } = req.body;
   const priceNormal = 20; // Price in $
   const priceExpress = 70;
-  const priceIsForParcelAreaLimit = 2706; // Area is in cm
-  // area of a parcel
-  const area = parcel.height * parcel.length * 2 + parcel.width * parcel.height * 2
-    + parcel.length * parcel.width * 2;
-
   // Parcel price in $
   let price;
 
   const user = User.filter(customer => customer.userId === userId)[0];
 
-  const calculatePrice = (pricePerOneWeight) => {
-    // Parcel area is not exceed
-    if (area <= priceIsForParcelAreaLimit) {
-      return pricePerOneWeight * parcel.weight * parcel.quantity;
-    }
-    // Parcel area exceed
-    return (
-      (pricePerOneWeight * parcel.weight * parcel.quantity * area) / priceIsForParcelAreaLimit
-    );
-  };
-
+  const calculatePrice = pricePerOneWeight => (
+    (pricePerOneWeight * parcel.weight * parcel.height * parcel.length)
+  );
   if (user) {
     // Price per Service on Normal
     // Price per Service on Express
-    price = parcel.From === parcel.To
+    price = parcel.From === parcel.Service
       ? calculatePrice(priceNormal)
       : calculatePrice(priceExpress);
     // Parcel Id
     const pId = Parcels.length + 1;
     const parcelWith = parcel;
     parcelWith.parcelId = pId;
-    parcelWith.status = 'booking';
+    parcelWith.status = 'Pending';
 
     // Save parcel
     Parcels.push({ userId, price, parcel: parcelWith });
