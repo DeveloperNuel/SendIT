@@ -12,7 +12,7 @@ body{
 .container{
 	width: 90%;
 	margin: auto;
-	overflow: hidden;
+	
 }
 ul{
 	margin: 0;
@@ -25,7 +25,7 @@ ul{
   color:#ffffff;
   margin-top:10px;
   margin-bottom:10px;
-  height: 600px;
+  height: 500px;
   width: 70%;
 
 
@@ -52,6 +52,8 @@ header{
 	padding-top: 30px;
 	min-height: 70px;
 	border-bottom: #e8491d 3px;
+	width: 100%;
+
 }
 
 header a{
@@ -85,7 +87,9 @@ header nav{
     border: 1px;
     height: 40px;
     background-color: #006699;
-    border-radius: 2px;
+	border-radius: 2px;
+	margin-bottom: 20px;
+	margin-left: 60px;
 }
 #but{
 	padding-left: 500px;
@@ -177,13 +181,13 @@ header img{
 }
 
 footer{
-	padding: 20px;
-	margin-top: 5px;
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 	color: #ffffff;
 	text-align: center;
 	background-color: #663300;
-	position: fixed;
-	width: 100%;
     
 }
 
