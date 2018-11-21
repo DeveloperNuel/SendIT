@@ -3,6 +3,9 @@ import chai, { expect } from 'chai';
 import { describe, it } from 'mocha';
 import app from '../app';
 
+
+const pid = '98bdf263-a37b-433b-81f7-f557a74fdb85';
+const url = 'http://localhost:5000';
 chai.use(chaiHttp);
 
 describe('SendIT API TESTS', () => {
@@ -93,7 +96,7 @@ describe('SendIT API TESTS', () => {
     describe('GET/ Specif Parcel', () => {
       // Parcel Should be canceled
       it('should return a parcel', () => chai.request(app)
-        .get('/api/v1/parcels/1')
+        .get(`/api/v1/parcels/${pid}`)
         .then((res) => {
           expect(res).to.have.status(200);
           expect(res.body).to.have.property('success').eql(true);
@@ -114,8 +117,9 @@ describe('SendIT API TESTS', () => {
     describe('PUT/ Cancel a parcel', () => {
       // Should cancel a parcel
       it('should cancel a parcel', () => chai.request(app)
-        .put('/api/v1/parcels/1/cancel')
+        .put(`/api/v1/parcels/${pid}/cancel`)
         .then((res) => {
+          console.log(res.body);
           expect(res).to.have.status(200);
           expect(res.body).to.have.property('success').eql(true);
           expect(res.body).to.have.property('parcel');
@@ -184,6 +188,7 @@ describe('SendIT API TESTS', () => {
             userId: 1,
             names: 'Emmanuel TUYISHIMIRE',
             email: 'egentle05@gmail.com',
+            phone: 250788208798,
             password: 'jesus',
           },
         ];

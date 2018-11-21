@@ -1,6 +1,7 @@
 import express from 'express';
 import Parcels from '../data/parcels';
 import User from '../data/users';
+import uuid from 'uuid';
 
 const router = express.Router();
 
@@ -23,11 +24,10 @@ router.post('/', (req, res) => {
     price = req.body.From === req.body.services
       ? calculatePrice(priceNormal)
       : calculatePrice(priceExpress);
-    // Parcel Id
-    const pId = Parcels.length + 1;
+    const pId = uuid.v4();
     const parcelWith = { ...req.body };
     parcelWith.parcelId = pId;
-    parcelWith.status = 'Pending';
+    parcelWith.status = 'pending';
 
     // Save parcel
     Parcels.push(parcelWith);
@@ -37,6 +37,7 @@ router.post('/', (req, res) => {
       success: true,
       message: 'Parcel created successfully',
       parcelId: pId,
+      parcel: parcelWith,
       price: Number(price.toFixed(2)),
     });
   }
@@ -59,8 +60,9 @@ router.get('/', (req, res) => {
 
 // Get a specific parcels
 router.get('/:parcelId', (req, res) => {
+  console.log(req.params.parcelId);
   const parcelDelivery = Parcels.filter(
-    parcel => parcel.parcel.parcelId === Number(req.params.parcelId),
+    parcel => parcel.parcelId === req.params.parcelId,
   );
 
   if (parcelDelivery.length > 0) {
@@ -78,16 +80,15 @@ router.get('/:parcelId', (req, res) => {
 
 // Cancel a parcel delivery order
 router.put('/:parcelId/cancel', (req, res) => {
-  const parcel = Parcels.find(item => item.parcelId === Number.parseInt(req.params.parcelId, 5));
-  console.log(parcel);
-  let index = Parcels.indexOf(parcel);
-  if (index >= 0 && index < Parcels.length) {
-    Parcels[index].status = 'canceled';
+  const parcel = Parcels.find(item => item.parcelId === req.params.parcelId);
+  const index = Parcels.indexOf(parcel); 
+  console.log(index);
+  if (index >= 0) {
+    // Parcels[index].status = 'canceled';
     if (Parcels[index].status === 'pending') {
       return res.status(200).send({
         success: true,
         message: 'Parcel is successfully canceled',
-        parcel: index,
       });
     }
     return res.status(405).send({
