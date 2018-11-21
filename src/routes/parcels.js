@@ -6,44 +6,31 @@ const router = express.Router();
 
 // Create parcel
 router.post('/', (req, res) => {
-  const { userId, parcel } = req.body;
+  // const { userId } = req.body;
   const priceNormal = 20; // Price in $
   const priceExpress = 70;
-  const priceIsForParcelAreaLimit = 2706; // Area is in cm
-  // area of a parcel
-  const area = parcel.height * parcel.length * 2 + parcel.width * parcel.height * 2
-    + parcel.length * parcel.width * 2;
-
   // Parcel price in $
   let price;
 
-  const user = User.filter(customer => customer.userId === userId)[0];
+  const user = User.filter(customer => customer.userId === req.body.userId)[0];
 
-  const calculatePrice = (pricePerOneWeight) => {
-    // Parcel area is not exceed
-    if (area <= priceIsForParcelAreaLimit) {
-      return pricePerOneWeight * parcel.weight * parcel.quantity;
-    }
-    // Parcel area exceed
-    return (
-      (pricePerOneWeight * parcel.weight * parcel.quantity * area) / priceIsForParcelAreaLimit
-    );
-  };
-
+  const calculatePrice = pricePerOneWeight => (
+    (pricePerOneWeight * req.body.weight * req.body.height * req.body.length)
+  );
   if (user) {
     // Price per Service on Normal
     // Price per Service on Express
-    price = parcel.From === parcel.To
+    price = req.body.From === req.body.services
       ? calculatePrice(priceNormal)
       : calculatePrice(priceExpress);
     // Parcel Id
     const pId = Parcels.length + 1;
-    const parcelWith = parcel;
+    const parcelWith = { ...req.body };
     parcelWith.parcelId = pId;
-    parcelWith.status = 'booking';
+    parcelWith.status = 'Pending';
 
     // Save parcel
-    Parcels.push({ userId, price, parcel: parcelWith });
+    Parcels.push(parcelWith);
 
     console.log(Parcels);
     return res.status(201).json({
@@ -62,9 +49,7 @@ router.post('/', (req, res) => {
 
 // Get all parcels
 router.get('/', (req, res) => {
-  const parcelDeliveries = [];
-  console.log(Parcels);
-  Parcels.map(parcel => parcelDeliveries.push(parcel.parcel));
+  const parcelDeliveries = [...Parcels];
   res.status(200).json({
     success: true,
     message: 'Parcels retrieved successfully',
@@ -93,39 +78,21 @@ router.get('/:parcelId', (req, res) => {
 
 // Cancel a parcel delivery order
 router.put('/:parcelId/cancel', (req, res) => {
-  let parcelDelivery = {};
-  let index;
-  req.params.parcelId = Number(req.params.parcelId);
-  for (let i = 0; i < Parcels.length; i += 1) {
-    if (Parcels[i].parcel.parcelId === req.params.parcelId) {
-      parcelDelivery = Parcels[i].parcel;
-      index = i;
-      break;
-    }
-  }
-
-  if (parcelDelivery) {
-    if (
-      parcelDelivery.status === 'pending' || parcelDelivery.status === 'canceled'
-    ) {
-      parcelDelivery.status = 'canceled';
-      if (Parcels[index].parcel.parcelId === parcelDelivery.parcelId) {
-        Parcels[index].parcel.status = 'canceled';
-        return res.status(200).send({
-          success: true,
-          message: 'Parcel is successfully canceled',
-          parcel: parcelDelivery,
-        });
-      }
-      return res.status(405).send({
-        success: false,
-        message: 'Data index changed. Try again!',
+  const parcel = Parcels.find(item => item.parcelId === Number.parseInt(req.params.parcelId, 5));
+  console.log(parcel);
+  let index = Parcels.indexOf(parcel);
+  if (index >= 0 && index < Parcels.length) {
+    Parcels[index].status = 'canceled';
+    if (Parcels[index].status === 'pending') {
+      return res.status(200).send({
+        success: true,
+        message: 'Parcel is successfully canceled',
+        parcel: index,
       });
     }
     return res.status(405).send({
       success: false,
-      message:
-        'Not allowed to cancel a parcel with status of delivered or transit',
+      message: 'Not allowed to cancel a parcel with status of delivered or transit',
     });
   }
   return res.status(404).send({

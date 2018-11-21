@@ -11,7 +11,7 @@ router.post('/register', (req, res) => {
 
   if (req.body.password.length < 8) {
     errors.push({
-      text: 'Passwor must be at least 8 characters',
+      text: 'Password must be at least 8 characters',
     });
   }
 
@@ -46,6 +46,7 @@ router.post('/register', (req, res) => {
         userId: User.length + 1,
         names: req.body.names,
         email: req.body.email,
+        phone: req.body.phone,
         password: req.body.password,
       };
       const salt = bcrypt.genSaltSync(10);
