@@ -10,7 +10,7 @@ body{
 /*Global css*/
 
 .container{
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	overflow: hidden;
 }
@@ -25,7 +25,8 @@ ul{
   color:#ffffff;
   margin-top:10px;
   margin-bottom:10px;
-  height: 500px;
+  height: 600px;
+  width: 70%;
 
 
 }
@@ -111,7 +112,7 @@ header img{
 }
 
 #showcase h1{
-	margin-top: 100px
+	margin-top: 100px;
 	font-size: 55px;
 	margin-bottom: 10px;
 
@@ -204,6 +205,7 @@ footer{
 	padding-top: 50px;
 	padding-left: 20px;
 	padding-bottom: 40px;
+	text-align: center;
 
 }
 #login-style label{
@@ -222,7 +224,7 @@ footer{
 #login-style button{
    padding-left: 10px;
    border-radius: 2px;
-   width: 30%;
+   width: 20%;
    font-size: 20px;
    border: 1px;
    height: 40px;
@@ -238,6 +240,7 @@ footer{
 #signup-style label{
  display: block;
  padding-bottom: 20px;
+ text-align: center;
 }
 #signup-style input{
    padding-left: 10px;
@@ -251,10 +254,16 @@ footer{
 #signup-style button{
    padding-left: 10px;
    border-radius: 2px;
-   width: 30%;
+   width: 20%;
    font-size: 20px;
    border: 1px;
    height: 40px;
+   
+}
+#signup-style a{
+	padding-left: 480px;
+	float: left;
+	
 }
 #Order{
 	padding-top: 10px;
@@ -278,4 +287,43 @@ footer{
 	float: left;
 	padding-bottom: 40px;
 	display: inline;
+
+	width: 150px;
+    padding: 10px;
+    border: 5px solid gray;
+	margin: 0;
+	margin-right: 10px;
   }
+
+.tftable {font-size:12px;
+	color:#333333;display:inline-block;
+	width:900px;border-width: 1px;border-color: #729ea5;
+	border-collapse: collapse; margin-right:20px;float: left;}
+
+.tftable th {
+	font-size:16px;
+	background-color:#acc8cc;
+	border-width: 1px;border-style: solid;
+	border-color: #729ea5;
+	text-align:left;width:200px;
+}
+
+.tftable tr {
+	background-color:#d4e3e5;width:100px;
+}
+.tftable td {
+	font-size:12px;border-width: 1px;
+	border-style: solid;
+	border-color: #729ea5;width:200px;
+}
+
+.tftable tr:hover {
+	background-color:#ffffff;
+}
+
+
+/* Shipping*/
+#ship{
+	background: #ffffff;
+	border-bottom: 2px solid #e8491d;
+}
