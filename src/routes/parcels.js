@@ -1,7 +1,7 @@
 import express from 'express';
+import uuid from 'uuid';
 import Parcels from '../data/parcels';
 import User from '../data/users';
-import uuid from 'uuid';
 
 const router = express.Router();
 
@@ -81,19 +81,19 @@ router.get('/:parcelId', (req, res) => {
 // Cancel a parcel delivery order
 router.put('/:parcelId/cancel', (req, res) => {
   const parcel = Parcels.find(item => item.parcelId === req.params.parcelId);
-  const index = Parcels.indexOf(parcel); 
+  const index = Parcels.indexOf(parcel);
   console.log(index);
   if (index >= 0) {
     // Parcels[index].status = 'canceled';
     if (Parcels[index].status === 'pending') {
       return res.status(200).send({
         success: true,
-        message: 'Parcel is successfully canceled',
+        message: 'Parcel is successfully cancelled',
       });
     }
     return res.status(405).send({
       success: false,
-      message: 'Not allowed to cancel a parcel with status of delivered or transit',
+      message: 'Not allowed to cancel a parcel with status of delivered or In Transit',
     });
   }
   return res.status(404).send({
