@@ -1,9 +1,10 @@
 /*Sign Up Styling*/
 #signup-style{
 	background-color: #f3e5d8;
-	padding-top: 20px;
 	padding-left: 20px;
-	padding-bottom: 40px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	margin-top: -60px;
 
 }
 #signup-style label{
@@ -37,7 +38,7 @@
 
 #showcase1 {
 	min-height: 250px;
-	background: url('../image/backimage.png') no-repeat 0 -300px;
+	background: url('../image/backimage.png') no-repeat 0 -350px;
 	text-align: center;
 	color: black;
 

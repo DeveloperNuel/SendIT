@@ -1,3 +1,33 @@
+/*Login Form Styling*/
+#login-style{
+	background-color: #f3e5d8;
+	padding-top: 50px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+
+}
+#login-style label{
+ display: block;
+ padding-bottom: 20px;
+}
+#login-style input{
+   padding-left: 10px;
+   border-radius: 2px;
+   width: 40%;
+   font-size: 20px;
+   border: 1px;
+   height: 40px;
+}
+
+#login-style button{
+   padding-left: 10px;
+   border-radius: 2px;
+   width: 20%;
+   font-size: 20px;
+   border: 1px;
+   height: 40px;
+}
 #showcase1{
 	min-height: 250px;
 	background: url('../image/backimage.png') no-repeat 0 -300px;
