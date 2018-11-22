@@ -2,17 +2,21 @@
 [![Coverage Status](https://coveralls.io/repos/github/DeveloperNuel/SendIT/badge.svg?branch=develop)](https://coveralls.io/github/DeveloperNuel/SendIT?branch=develop)
 
 # SendIT
+
     SendIT is a courier service that helps users deliver parcels to different destinations, and it 
-    provides courier quotes based on weight categories. It uses the popular JavaScript runtime environment, `NodeJs` and runs express at the backend. All codes are written in `ES6` syntax and transpiled using the `BabelCLI to a preset ES2015`.
+    provides courier quotes based on weight categories. It uses the popular JavaScript runtime environment, `NodeJs` and runs express at the backend. All codes are written in `ES6` syntax and transpiled using the BabelCLI to a preset ES2015.
+
 ## UI without any Framework
   - HTML
   - CSS
   - Javascript (ES6)
+
 ## Getting Started
 
-     These instructions will get you a copy of the project up and running on your local machine for development  and testing purposes. See deployment for notes on how to deploy the project on a live system.
+   These instructions will get you a copy of the project up and running on your local machine for development  and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Prerequisites
+
      To install this API on your your computer, you need to first clone this repository or download the zip file. Once this is set up, you are going to need the following packages.
      ```
      [NodeJs]
