@@ -4,7 +4,7 @@
 # SendIT
 
   SendIT is a courier service that helps users deliver parcels to different destinations, and it 
-  provides courier quotes based on weight categories. It uses the popular JavaScript runtime environment, `NodeJs` and runs express at the backend. All codes are written in `ES6` syntax and transpiled using the BabelCLI to a preset ES2015.
+  provides courier quotes based on weight categories. It uses the popular JavaScript runtime environment, `NodeJs` and runs express at the backend. All codes are written in `ES6` syntax and transpiled using the `BabelCLI to a preset ES2015`.
 
 ## UI without any Framework
   - HTML
@@ -20,7 +20,7 @@
   To install this API on your your computer, you need to first clone this repository or download the zip file. Once this is set up, you are going to need the following packages.
      ```
      [NodeJs]
-     [Node Package Installer - NPM] this usually comes with Node.
+     [Node Package Installer - NPM] _this usually comes with Node.
      ```
 ## Installing
 
@@ -40,7 +40,7 @@
       > npm test
 
   This runs the following script on the background processes:
-      > "clear && NODE_ENV=test nyc --reporter=text --reporter=lcov mocha --timeout 25000 --require babel-register {src,src/test/**}/*.spec.js --exit || true"
+      >"clear && NODE_ENV=test nyc --reporter=text --reporter=lcov mocha --timeout 25000 --require babel-register {src,src/test/**}/*.spec.js --exit || true"
 
 
 # Author
