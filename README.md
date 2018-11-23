@@ -28,11 +28,11 @@
 
       > npm install
 
-    This runs the following script on the background processes;
+  This runs the following script on the background processes;
 
       > nodemon app.js --exec babel-node --presets babel-preset-es2015`
 
-    This command starts the dev server on port 5000.
+  This command starts the dev server on port 5000.
 ## Running the tests
 
   To run test we simply run the following on the command prompt
