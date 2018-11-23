@@ -8,7 +8,8 @@ const router = express.Router();
 // Create parcel
 router.post('/', (req, res) => {
   // const { userId } = req.body;
-  const priceNormal = 20; // Price in $
+  // Price in $
+  const priceNormal = 20;
   const priceExpress = 70;
   // Parcel price in $
   let price;
