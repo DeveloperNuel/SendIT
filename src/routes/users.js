@@ -2,28 +2,26 @@ import express from 'express';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import bcrypt from 'bcryptjs';
 import User from '../data/users';
-import Parcels from '../data/parcels';
+import parcels from '../data/parcels';
 
 const router = express.Router();
+const emmailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 router.post('/register', (req, res) => {
   const errors = [];
-
   if (req.body.password.length < 8) {
     errors.push({
       text: 'Password must be at least 8 characters',
     });
   }
 
-  if (req.body.names.length < 3) {
+  if (req.body.name.length < 3) {
     errors.push({
       text: 'Your Names Should have at least 3 Character',
     });
   }
 
-  if (
-    req.body.email.indexOf('@') === -1 || req.body.email.indexOf('.') === -1
-  ) {
+  if (!emmailFormat.test(req.body.email)) {
     errors.push({
       text: 'Enter valid Email',
     });
@@ -73,17 +71,12 @@ router.post('/register', (req, res) => {
 
 // Get user parcel delivery orders
 router.get('/:userId/parcels', (req, res) => {
-  const userParcels = [];
+  let userParcels = [];
   req.params.userId = Number(req.params.userId);
 
   const user = User.filter(eachUser => eachUser.userId === req.params.userId);
   if (user.length > 0) {
-    Parcels.forEach((parcel) => {
-      if (parcel.userId === req.params.userId) {
-        userParcels.push(parcel.parcel);
-      }
-    });
-
+    userParcels = parcels.filter(parcel => parcel.userId === req.params.userId);
     if (userParcels.length > 0) {
       return res.status(200).json({
         success: true,
