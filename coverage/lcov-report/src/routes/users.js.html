@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">64.29% </span>
+        <span class="strong">55.81% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>27/42</span>
+        <span class='fraction'>24/43</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.11% </span>
+        <span class="strong">37.5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>11/18</span>
+        <span class='fraction'>6/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">80% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>4/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">65% </span>
+        <span class="strong">56.1% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>26/40</span>
+        <span class='fraction'>23/41</span>
       </div>
     </div>
     <p class="quiet">
@@ -150,19 +150,17 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,16 +173,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -219,7 +215,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -265,32 +261,30 @@ import User from '../data/users';
 import Parcels from '../data/parcels';
 &nbsp;
 const router = express.Router();
+const emmailFormat = /^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 &nbsp;
 router.post('/register', (req, res) =&gt; {
   const errors = [];
-&nbsp;
   <span class="missing-if-branch" title="else path not taken" >E</span>if (req.body.password.length &lt; 8) {
     errors.push({
       text: 'Password must be at least 8 characters',
     });
   }
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (req.body.names.length &lt; 3) {
+  if (req.body.name.length &lt; 3) {
 <span class="cstat-no" title="statement not covered" >    errors.push({</span>
       text: 'Your Names Should have at least 3 Character',
     });
   }
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (
-    req.body.email.indexOf('@') === -1 || req.body.email.indexOf('.') === -1
-  ) {
+<span class="cstat-no" title="statement not covered" >  if (!emmailFormat.test(req.body.email)) {</span>
 <span class="cstat-no" title="statement not covered" >    errors.push({</span>
       text: 'Enter valid Email',
     });
   }
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (errors.length &gt; 0) {
-    res.status(400).send(errors);
+<span class="cstat-no" title="statement not covered" >  if (errors.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    res.status(400).send(errors);</span>
   } else {
     // Ckecking if the Email is already existing or Registered
     const existingUser = <span class="cstat-no" title="statement not covered" >User.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >user =&gt; user.email === req.body.email);</span></span></span>
@@ -325,7 +319,7 @@ router.post('/register', (req, res) =&gt; {
       });
     }
   }
-  return res.send({
+<span class="cstat-no" title="statement not covered" >  return res.send({</span>
     success: false,
     message: 'User not registered! Please try again',
   });
@@ -370,7 +364,7 @@ module.exports = router;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Nov 21 2018 20:10:42 GMT+0200 (CAT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Nov 23 2018 12:10:20 GMT+0200 (CAT)
 </div>
 </div>
 <script src="../../prettify.js"></script>
