@@ -20,6 +20,7 @@
   To install this API on your your computer, you need to first clone this repository or download the zip file. Once this is set up, you are going to need the following packages.
      ```
      [NodeJs]
+     
      [Node Package Installer - NPM] _this usually comes with Node.
      ```
 ## Installing
