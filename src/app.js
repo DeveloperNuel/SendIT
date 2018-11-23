@@ -8,8 +8,9 @@ import parcels from './routes/parcels';
 
 const app = express();
 // Bordy parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // Use routes
 app.use('/api/v1/users', users);
