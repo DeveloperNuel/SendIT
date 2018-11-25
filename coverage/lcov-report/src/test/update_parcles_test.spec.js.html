@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">90.91% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>20/22</span>
+        <span class='fraction'>10/22</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">14.29% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>1/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">89.47% </span>
+        <span class="strong">52.63% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>17/19</span>
+        <span class='fraction'>10/19</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -103,10 +103,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,7 +114,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,8 +122,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import chaiHttp from 'chai-http';
@@ -140,30 +140,30 @@ chai.use(chaiHttp);
 // Cancel a parcel
 describe('PUT/ Cancel a parcel', () =&gt; {
   // Should cancel a parcel
-  it('should cancel a parcel', () =&gt; chai.request(app)
+  it('should cancel a parcel', <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; chai.request(app)</span></span>
     .put(`/api/v1/parcels/${pid}/cancel`)
-    .then((res) =&gt; {
-      console.log(res.body);
-      expect(res).to.have.status(200);
-      expect(res.body).to.have.property('success').eql(true);
-      expect(res.body).to.have.property('parcel');
+    .then(<span class="fstat-no" title="function not covered" >(</span>res) =&gt; {
+<span class="cstat-no" title="statement not covered" >      console.log(res.body);</span>
+<span class="cstat-no" title="statement not covered" >      expect(res).to.have.status(200);</span>
+<span class="cstat-no" title="statement not covered" >      expect(res.body).to.have.property('success').eql(true);</span>
+<span class="cstat-no" title="statement not covered" >      expect(res.body).to.have.property('parcel');</span>
 <span class="cstat-no" title="statement not covered" >      expect(res.body).to.be.an('object');</span>
     }));
 &nbsp;
   // Should not allow to cancel a not booking-status parcel
-  it('should not allow to cancel a parcel with status Delivered or Transit', () =&gt; chai.request(app)
+  it('should not allow to cancel a parcel with status Delivered or Transit', <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; chai.request(app)</span></span>
     .put('/api/v1/parcels/2/cancel')
-    .then((res) =&gt; {
-      expect(res).to.have.status(405);
+    .then(<span class="fstat-no" title="function not covered" >(</span>res) =&gt; {
+<span class="cstat-no" title="statement not covered" >      expect(res).to.have.status(405);</span>
 <span class="cstat-no" title="statement not covered" >      expect(res.body).to.have.property('success').eql(false);</span>
     }));
 &nbsp;
   // Parcel not found
-  it('should return Not Found', () =&gt; chai.request(app)
+  it('should return Not Found', <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; chai.request(app)</span></span>
     .put('/api/v1/parcels/234_INVALID_PARCEL_ID/cancel')
-    .then((res) =&gt; {
-      expect(res).to.have.status(404);
-      expect(res.body).to.have.property('success').eql(false);
+    .then(<span class="fstat-no" title="function not covered" >(</span>res) =&gt; {
+<span class="cstat-no" title="statement not covered" >      expect(res).to.have.status(404);</span>
+<span class="cstat-no" title="statement not covered" >      expect(res.body).to.have.property('success').eql(false);</span>
     }));
 });
 &nbsp;</pre></td></tr>
@@ -172,7 +172,7 @@ describe('PUT/ Cancel a parcel', () =&gt; {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Nov 23 2018 12:10:20 GMT+0200 (CAT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Nov 23 2018 15:52:40 GMT+0200 (CAT)
 </div>
 </div>
 <script src="../../prettify.js"></script>

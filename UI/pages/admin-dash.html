@@ -3,8 +3,9 @@
 <head>	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="author" content="Emmanuel TUYISHIMIRE">
-	<title>User Dashboard</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<title>Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+ 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -26,7 +27,7 @@
 		<div class="container">
 			  <div id="sidebar">
 			  	<div class="dark">
-				  <h2>My Dash board</h2>
+				  <h2>My Dashboard</h2>
                    <a href="vieworder.html">View All Orders</a><br>
                    <a href="invoice.html">Settings</a><br>
                    <a href="signout.html">Log Out</a>
@@ -51,7 +52,7 @@
                         <td data-label="To">Rusizi</td>
                         <td data-label="Customer"> Emmanuel egentle05@gmail.com </td>
                         <td data-label="Status"> Pending </td>
-                        <td data-label="Manage"> <button type="button" class="buttons" onclick="window.location.href='#'">Manage</button></td>
+                        <td data-label="Manage"> <a id="manage" href="#"class="buttons">Manage</button></td>
                         <td data-label="Remove"> <a href="delete-order.html"><img src="../image/remove.png"></a></td>
                       </tr>
                       <tr>
@@ -99,6 +100,37 @@
                         <td data-label="Manage"> <button type="button" class="buttons" onclick="window.location.href='#'">Manage</button></td>
                         <td data-label="Remove"> <a href="delete-order.html"><img src="../image/remove.png"></a></td>
                       </tr>
+                      </table>
+    </section>
+  <!-- Modal Section-->
+  <div class="bg-modal">
+    <div class="modal-content">
+      <div class="close">+</div>
+       <form>
+         <table class="tftable"> 
+            <h1>Update Parcels</h1>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Customer</th>
+              <th scope="col">Status</th>
+            </tr>
+            <tr>
+                <td data-label="Date">02/11/2018</td>
+                <td data-label="From">Kigali</td>
+                <td data-label="To">Rusizi</td>
+                <td data-label="Customer"> Emmanuel egentle05@gmail.com </td>
+                <td><input type="text" placeholder="Pending"></td>
+            </tr>
 
+         </table>
+
+         <input type="button" value="Save" class="btn">
+       </form>
+    </div>
+
+  </div>
+  <script src="../js/admin.js"></script>
 </body>
 </html>
