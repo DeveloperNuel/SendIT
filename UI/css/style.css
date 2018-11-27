@@ -160,6 +160,7 @@ header img{
 
 #display{
 	padding: 20px;
+	widows: 100%;
 }
  #display table {
   padding: 10px 15px;
